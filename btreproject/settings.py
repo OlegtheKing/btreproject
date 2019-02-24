@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "realtors.apps.RealtorsConfig",
+    "listings.apps.ListingsConfig",
     "pages.apps.PagesConfig",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,9 +124,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-# STATICFILES_DIRS = [                              since we don't have any other static dirs we don't specify them
-#     os.path.join(BASE_DIR, 'btreproject/static/')
-# ]
+STATICFILES_DIRS = [                              # since we don't have any other static dirs we don't specify them
+    os.path.join(BASE_DIR, 'btreproject/static/')
+]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
