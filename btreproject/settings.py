@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "pages.apps.PagesConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'btreproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["btreproject/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'btreproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',  # setting up default db engine
-        'NAME': "db",  # name of db
+        'NAME': "btredb",  # name of db
         "USER": "postgres",  # who can access it
         "PASSWORD": "02121998",
         "HOST":  "localhost",  # where to find,
@@ -121,9 +122,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'btreproject/static/')
-]
+# STATICFILES_DIRS = [                              since we don't have any other static dirs we don't specify them
+#     os.path.join(BASE_DIR, 'btreproject/static/')
+# ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
