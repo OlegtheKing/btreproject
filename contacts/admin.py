@@ -1,4 +1,12 @@
 from django.contrib import admin
 from .models import Contact
 
-admin.site.register(Contact)
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "listing", "email", "contactdate",)
+    list_display_links = ("id", "name",)
+    search_fields = ("name", "listing",)
+    list_per_page = 20
+
+
+admin.site.register(Contact, ContactAdmin)
